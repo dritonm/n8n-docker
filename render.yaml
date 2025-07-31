@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: n8n
+    env: docker
+    repo: https://github.com/dritonm/n8n-docker
+    region: frankfurt
+    branch: main
+    plan: free
+    dockerContext: .
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: "true"
+      - key: N8N_BASIC_AUTH_USER
+        value: "iluminspo"
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: "tR0n@2025N8N!"
+      - key: N8N_HOST
+        value: https://iluminspo-n8n.onrender.com
+      - key: N8N_PROTOCOL
+        value: https
